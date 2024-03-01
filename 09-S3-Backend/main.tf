@@ -15,15 +15,15 @@ terraform {
     }
   }
 
-  required_version = ">= 1.4.6"
+  required_version = ">= 1.0.0"
 }
 
 provider "aws" {
-  region = "us-east-1"  
+  region = "us-east-1"
 }
 
 resource "aws_iam_user" "user_tif" {
-  name = "user-tif" 
+  name = "user-tif"
   tags = {
     department = "DEVOPS"
   }

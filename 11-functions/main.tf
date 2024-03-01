@@ -4,25 +4,24 @@ formatdate Function: This function formats timestamps into human-readable date f
 join Function: This function concatenates a list of strings using a specified separator. In this example, join("-", ["tf-example", formatdate("YYYYMMDD", timestamp())]) concatenates "tf-example" with the current date, resulting in a unique bucket name like tf-example-20240228.
 */
 terraform {
-    required_providers {
-        aws = {
-        source  = "hashicorp/aws"
-        version = "~> 4.40"
-        }
+  required_providers {
+    aws = {
+      source  = "hashicorp/aws"
+      version = "~> 4.16"
     }
-    
-    required_version = ">= 1.4.6"
-    
+  }
+
+  required_version = ">= 1.2.0"
 }
 
 provider "aws" {
-  region = "us-west-1"
+  region = "us-east-1"
 }
 
 resource "aws_s3_bucket" "example_bucket" {
   # Generates a bucket name by concatenating strings with the current timestamp
   bucket = join("-", ["tf-example", formatdate("YYYYMMDD", timestamp())])
-  
+
   tags = {
     Name = "ExampleBucket"
   }

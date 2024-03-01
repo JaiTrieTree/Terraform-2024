@@ -35,11 +35,11 @@ resource "aws_instance" "test_instance" {
 
 ## Later, resources can be created in the second region by  
 ## using the alias: aws.oregon
-## This will be Debian Linux running in Oregon (us-west-2). Note the different ami for the region (free tier eligible)
+## This will be Amazon Linux running in Oregon (us-west-2). Note the different ami for the region (free tier eligible)
 
 resource "aws_instance" "oregon_instance" {
   provider = aws.oregon
-  ami           = "ami-0744bdf45532dfd8e"
+  ami           = "ami-052c9ea013e6e3567"
   instance_type = "t2.micro"
   tags = {
     Name = "OREGON TEST INSTANCE! DESTROY ME WHEN DONE!!"

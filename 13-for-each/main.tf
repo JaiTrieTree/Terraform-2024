@@ -9,7 +9,7 @@ resource "aws_instance" "example" {
   for_each = var.instance_azs
 
   # Specify the AMI and instance type for the instances
-  ami           = "ami-0c02fb55956c7d316" # Ensure this AMI is available in your region or update accordingly
+  ami           = "ami-0440d3b780d96b29d" # Ensure this AMI is available in your region or update accordingly
   instance_type = "t2.micro"
   # Set the availability zone for each instance based on the instance_azs map
   /*
