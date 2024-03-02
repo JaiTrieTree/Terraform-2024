@@ -19,7 +19,7 @@ resource "aws_instance" "example" {
     # Connection block specifies how to connect
     connection {
       type        = "ssh"
-      user        = "ec2-user"                                               # or appropriate user for your AMI
+      user        = "ec2-user"                # or appropriate user for your AMI
       private_key = file("keys/deployer-key") # Path to your private SSH key
       host        = self.public_ip
     }
